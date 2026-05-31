@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sistem Manajemen Kos</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_main">
+    <item>
+     <widget class="QLabel" name="lbl_judul">
+      <property name="text">
+       <string>Sistem Manajemen Kos</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="styleSheet">
+       <string>font-size: 18px; font-weight: bold; padding: 10px; color: #2c3e50;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+
+      <widget class="QWidget" name="tab_penyewa">
+       <attribute name="title">
+        <string>Penyewa</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_penyewa">
+
+        <item>
+         <widget class="QGroupBox" name="grp_form_penyewa">
+          <property name="title">
+           <string>Tambah Penyewa Baru</string>
+          </property>
+          <layout class="QHBoxLayout" name="hl_form_penyewa">
+           <item>
+            <layout class="QFormLayout" name="fl_penyewa">
+             <item row="0" column="0">
+              <widget class="QLabel" name="lbl_id"><property name="text"><string>ID Penyewa:</string></property></widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="input_id">
+               <property name="placeholderText"><string>contoh: 11</string></property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="lbl_nik"><property name="text"><string>NIK:</string></property></widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="input_nik">
+               <property name="placeholderText"><string>16 digit NIK</string></property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="lbl_nama"><property name="text"><string>Nama:</string></property></widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="input_nama">
+               <property name="placeholderText"><string>Nama lengkap</string></property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="lbl_telepon"><property name="text"><string>No Telepon:</string></property></widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="input_telepon">
+               <property name="placeholderText"><string>08xxxxxxxxxx</string></property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="vl_btn_penyewa">
+             <item>
+              <widget class="QPushButton" name="btn_tambah_penyewa">
+               <property name="text"><string>Tambah Penyewa</string></property>
+               <property name="styleSheet"><string>background-color: #27ae60; color: white; padding: 8px; font-weight: bold; border-radius: 4px;</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_hapus_penyewa">
+               <property name="text"><string>Hapus Penyewa</string></property>
+               <property name="styleSheet"><string>background-color: #e74c3c; color: white; padding: 8px; font-weight: bold; border-radius: 4px;</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_refresh">
+               <property name="text"><string>Refresh</string></property>
+               <property name="styleSheet"><string>background-color: #3498db; color: white; padding: 8px; font-weight: bold; border-radius: 4px;</string></property>
+              </widget>
+             </item>
+             <item>
+              <spacer>
+               <property name="orientation"><enum>Qt::Vertical</enum></property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+
+        <item>
+         <widget class="QTableWidget" name="tbl_penyewa">
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+         </widget>
+        </item>
+
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="tab_kamar">
+       <attribute name="title">
+        <string>Kamar</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_kamar">
+        <item>
+         <widget class="QLabel" name="lbl_kamar_info">
+          <property name="text"><string>Daftar Kamar</string></property>
+          <property name="styleSheet"><string>font-weight: bold; font-size: 14px; padding: 5px;</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tbl_kamar">
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="tab_kontrak">
+       <attribute name="title">
+        <string>Kontrak Sewa</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_kontrak">
+        <item>
+         <widget class="QLabel" name="lbl_kontrak_info">
+          <property name="text"><string>Daftar Kontrak Sewa</string></property>
+          <property name="styleSheet"><string>font-weight: bold; font-size: 14px; padding: 5px;</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tbl_kontrak">
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="tab_pembayaran">
+       <attribute name="title">
+        <string>Pembayaran</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_pembayaran">
+        <item>
+         <widget class="QLabel" name="lbl_bayar_info">
+          <property name="text"><string>Riwayat Pembayaran</string></property>
+          <property name="styleSheet"><string>font-weight: bold; font-size: 14px; padding: 5px;</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tbl_pembayaran">
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="tab_komplain">
+       <attribute name="title">
+        <string>Komplain</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_komplain">
+        <item>
+         <widget class="QLabel" name="lbl_komplain_info">
+          <property name="text"><string>Daftar Komplain</string></property>
+          <property name="styleSheet"><string>font-weight: bold; font-size: 14px; padding: 5px;</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tbl_komplain">
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+   </layout>
+  </widget>
+
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
